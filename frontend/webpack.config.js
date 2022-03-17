@@ -1,5 +1,5 @@
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     entry: './src/index.jsx',
@@ -12,14 +12,14 @@ module.exports = {
         contentBase: './public',
     },
     resolve: {
-        extensions: ['', 'js', 'jsx'],
+        extensions: ['', '.js', '.jsx'],
         alias: {
             modules: __dirname + '/node_modules',
             jquery: 'modules/admin-lte/plugins/jQuery/jquery-2.2.3.min.js',
-            bootstap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
+            bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
         }
     },
-    plugins: [
+    plugins: [ 
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
