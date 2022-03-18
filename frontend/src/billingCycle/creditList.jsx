@@ -12,7 +12,11 @@ class CreditList extends Component {
             <tr key={index}>
                 <td><Field name={`credits[${index}].name`} component={Input} placeholder='Informe o nome' readOnly={this.props.readOnly} /></td>
                 <td><Field name={`credits[${index}].value`} component={Input} placeholder='Informe o valor' readOnly={this.props.readOnly} /></td>
-                <td></td>
+                <td>
+                    <button className='btn btn-success'>
+                        <i className='fa fa-plus'></i>
+                    </button>
+                </td>
             </tr>
         ))
     }
@@ -22,7 +26,7 @@ class CreditList extends Component {
             <Grid cols={this.props.cols}>
                 <fieldset>
                     <legend>Crédito</legend>
-                    <table className="table">
+                    <table className='table'>
                         <thead>
                             <tr>
                                 <th>Nome</th>
