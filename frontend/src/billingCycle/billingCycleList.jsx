@@ -10,7 +10,14 @@ class BillingCycleList extends Component {
     }
 
     renderRows() {
-        const list = this.props.list
+        const list = this.props.list || [];
+        return list.map(bc => (
+            <tr key={bc._id}>
+                <td>{bc.name}</td>
+                <td>{bc.month}</td>
+                <td>{bc.year}</td>
+            </tr>
+        ))
     }
 
     render() {
@@ -34,7 +41,7 @@ class BillingCycleList extends Component {
 }
 
 const mapStateToProps = state => ({
-    list: state.billingCycle.list
+    list: state.billingCycleReducer.list
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({getList}, dispatch)
